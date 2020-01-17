@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+void convert(int dec)
+{
+    char conv[100];
+    int i=0;
+    while(dec!=0)
+    {
+        int temp = 0;
+        temp = dec%16;
+        if(temp<10)
+        {
+            conv[i] = 48 + temp;
+            i++;
+        }
+        else
+        {
+            conv[i] = 55 + temp;
+            i++;
+        }
+        dec = dec/16;
+    }
+    for(int j=i-1;j>=0;j--)
+    {
+        cout<<conv[j];
+    }
+}
+int main()
+{
+    int dec;
+    cout<<"Enter any number";
+    cin>>dec;
+    convert(dec);
+    return 0;
+}
